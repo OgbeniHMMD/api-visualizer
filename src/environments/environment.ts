@@ -9,23 +9,20 @@ export const environment = {
   REQUESTS: [
     {
       verb: 'get',
-      title: '/posts',
-      url: 'https://jsonplaceholder.typicode.com/posts',
+      url: '/posts',
     },
     {
       verb: 'get',
-      title: '/posts/1/comments',
-      url: 'https://jsonplaceholder.typicode.com/posts/1/comments',
+      url: '/posts/1/comments',
     },
     {
       verb: 'get',
-      title: '/comments',
-      url: 'https://jsonplaceholder.typicode.com/comments',
+      url: '/comments',
     },
     {
       verb: 'get',
-      title: '/comments?postId=1',
-      url: 'https://jsonplaceholder.typicode.com/comments?postId=1',
+      url: '/comments',
+      query: 'postId=1',
     },
   ],
 };
