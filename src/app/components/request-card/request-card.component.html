@@ -5,11 +5,11 @@
     <div class="flex-grow flex gap-4 items-center">
       <button
         (click)="fetchRequest()"
-        class="rounded font-medium bg-gray-300 py-2 px-4 text-gray-600 hover:bg-gray-200"
+        class="rounded font-medium bg-gray-300 py-2 px-4 text-gray-600 uppercase hover:bg-gray-200"
       >
-        GET
+        {{ req.verb }}
       </button>
-      <div class="font-mono">https://jsonplaceholder.typicode.com/todos/1</div>
+      <div class="font-mono">{{ req.title }}</div>
     </div>
 
     <button
@@ -21,6 +21,7 @@
   </div>
 
   <textarea
+    readonly
     *ngIf="response"
     [value]="response"
     class="font-mono h-48 text-xs w-full p-4 focus:outline-0"

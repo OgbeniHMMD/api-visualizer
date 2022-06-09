@@ -1,25 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-request-card',
   templateUrl: './request-card.component.html',
 })
 export class RequestCardComponent implements OnInit {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
+  @Input() req = { title: '', verb: 'GET', url: '' };
   response = '';
 
   ngOnInit(): void {}
 
   fetchRequest() {
-    const response = [
-      { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
-      { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
-      { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
-      { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
-    ];
-
-    this.response = JSON.stringify(response, null, 4);
+    this.http.get(this.req.url).subscribe({
+      next: (res: any) => {
+        this.response = JSON.stringify(res, null, 4);
+      },
+    });
   }
 
   reset() {
