@@ -6,8 +6,6 @@ import { environment } from 'src/environments/environment';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'api-visualizer';
-
   base = environment.BASE_URL;
   requests = environment.REQUESTS;
 }
