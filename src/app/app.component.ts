@@ -7,14 +7,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'api-visualizer';
 
-  result = [
-    { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
-    { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
-    { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
-    { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
+  base = 'https://jsonplaceholder.typicode.com';
+  requests = [
+    {
+      verb: 'get',
+      title: '/todos/1',
+      url: `${this.base}/todos/1`,
+    },
+    {
+      verb: 'get',
+      title: '/todos/1',
+      url: `${this.base}/todos/1`,
+    },
+    {
+      verb: 'get',
+      title: '/todos/1',
+      url: `${this.base}/todos/1`,
+    },
   ];
-
-  formatCode(v: object) {
-    return JSON.stringify(v, null, 4);
-  }
 }
