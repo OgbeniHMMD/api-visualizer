@@ -22,7 +22,7 @@ export const environment = {
     {
       verb: 'get',
       url: '/comments',
-      query: 'postId=1',
+      queries: 'postId=1',
     },
   ],
 };
