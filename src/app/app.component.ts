@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'api-visualizer';
 
-  base = 'https://jsonplaceholder.typicode.com';
-  requests = [
-    {
-      verb: 'get',
-      title: '/todos/1',
-      url: `${this.base}/todos/1`,
-    },
-    {
-      verb: 'get',
-      title: '/todos/1',
-      url: `${this.base}/todos/1`,
-    },
-    {
-      verb: 'get',
-      title: '/todos/1',
-      url: `${this.base}/todos/1`,
-    },
-  ];
+  base = environment.BASE_URL;
+  requests = environment.REQUESTS;
 }

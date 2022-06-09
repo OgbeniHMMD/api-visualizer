@@ -2,13 +2,22 @@
   class="bg-white border- rounded h-full border-2 group-focus:border-gray-600"
 >
   <div class="border-b flex text-sm p-4 gap-4 items-center">
+    <div class="flex-grow flex gap-4 items-center">
+      <button
+        (click)="fetchRequest()"
+        class="rounded font-medium bg-gray-300 py-2 px-4 text-gray-600 hover:bg-gray-200"
+      >
+        GET
+      </button>
+      <div class="font-mono">https://jsonplaceholder.typicode.com/todos/1</div>
+    </div>
+
     <button
-      (click)="fetchRequest()"
-      class="rounded font-medium bg-gray-300 py-2 px-4 text-gray-600 hover:bg-gray-200"
+      (click)="reset()"
+      class="rounded font-medium text-xs py-2 px-4 text-red-600 hover:bg-red-200"
     >
-      GET
+      RESET
     </button>
-    <div class="font-mono">https://jsonplaceholder.typicode.com/todos/1</div>
   </div>
 
   <textarea

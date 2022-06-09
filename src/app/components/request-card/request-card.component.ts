@@ -10,6 +10,7 @@ export class RequestCardComponent implements OnInit {
   response = '';
 
   ngOnInit(): void {}
+
   fetchRequest() {
     const response = [
       { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
@@ -19,5 +20,9 @@ export class RequestCardComponent implements OnInit {
     ];
 
     this.response = JSON.stringify(response, null, 4);
+  }
+
+  reset() {
+    this.response = '';
   }
 }
